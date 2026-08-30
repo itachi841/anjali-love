@@ -175,7 +175,6 @@ body{
 
 .heart{
     font-size:70px;
-
     animation:heartbeat 1.2s infinite;
 }
 
@@ -195,7 +194,6 @@ body{
 
 h1{
     margin:18px 0;
-
     font-size:34px;
 
     text-shadow:
@@ -209,34 +207,24 @@ h2{
 
 p{
     margin:12px 0;
-
     color:#f9dce9;
-
     font-size:18px;
-
     line-height:1.8;
 }
 
 .typing{
     min-height:75px;
-
     color:#ffe6f0;
-
     font-size:19px;
-
     line-height:1.7;
 }
 
 .cursor{
     display:inline-block;
-
     width:2px;
     height:20px;
-
     margin-left:3px;
-
     background:white;
-
     animation:blink .7s infinite;
 }
 
@@ -318,9 +306,7 @@ button{
 .next,
 .surprise{
     margin-top:25px;
-
     padding:15px 30px;
-
     font-size:18px;
 }
 
@@ -536,37 +522,19 @@ button{
 
 <body>
 
-<!-- =========================
-     PARTICLES
-========================= -->
-
 <div id="particles"></div>
-
-
-<!-- =========================
-     MUSIC BUTTON
-========================= -->
 
 <button
     class="music"
     id="musicBtn"
     onclick="toggleMusic()">
-
     🎵 Play Music
-
 </button>
-
-
-<!-- =========================
-     APP
-========================= -->
 
 <div
     class="container"
     id="app">
-
 </div>
-
 
 <script>
 
@@ -574,8 +542,7 @@ button{
    ELEMENTS
 ========================= */
 
-const app =
-    document.getElementById("app");
+const app = document.getElementById("app");
 
 const particles =
     document.getElementById("particles");
@@ -593,8 +560,7 @@ for(let i=0;i<45;i++){
     const sparkle =
         document.createElement("div");
 
-    sparkle.className =
-        "sparkle";
+    sparkle.className = "sparkle";
 
     sparkle.style.left =
         Math.random()*100+"%";
@@ -618,8 +584,7 @@ function createHeart(){
     const heart =
         document.createElement("div");
 
-    heart.className =
-        "float-heart";
+    heart.className = "float-heart";
 
     const hearts=[
         "❤️",
@@ -656,10 +621,7 @@ function createHeart(){
     );
 }
 
-setInterval(
-    createHeart,
-    700
-);
+setInterval(createHeart,700);
 
 
 /* =========================
@@ -675,19 +637,13 @@ function typing(element,text){
         if(i<text.length){
 
             element.innerHTML =
-                text.substring(
-                    0,
-                    i+1
-                )
+                text.substring(0,i+1)
                 +
                 `<span class="cursor"></span>`;
 
             i++;
 
-            setTimeout(
-                write,
-                40
-            );
+            setTimeout(write,40);
 
         }else{
 
@@ -748,25 +704,21 @@ function homePage(){
         </div>
     `;
 
-
     typing(
         document.getElementById("typing"),
 
         "I have something special to ask you... Will you stay as my special person? 🫶"
     );
 
-
     let yesSize=19;
 
     let count=0;
-
 
     const yes =
         document.getElementById("yes");
 
     const no =
         document.getElementById("no");
-
 
     const noMessages=[
 
@@ -783,7 +735,6 @@ function homePage(){
         "Okay... YES? 🥺❤️"
     ];
 
-
     no.onclick=()=>{
 
         count++;
@@ -796,20 +747,16 @@ function homePage(){
                 )
             ];
 
-
         yesSize+=5;
 
         yes.style.fontSize =
             yesSize+"px";
 
-
         if(count>=6){
 
-            no.style.display =
-                "none";
+            no.style.display="none";
         }
     };
-
 
     yes.onclick=()=>{
 
@@ -947,8 +894,9 @@ function memoryPage(){
             <div class="photo-box">
 
                 <img
-                    src="images/anjali1.jpeg"
-                    alt="Anjali">
+                    src="anjali1.jpeg"
+                    alt="Anjali"
+                    onerror="this.style.display='none';">
 
             </div>
 
@@ -968,12 +916,9 @@ function memoryPage(){
         </div>
     `;
 
-
     typing(
 
-        document.getElementById(
-            "memoryText"
-        ),
+        document.getElementById("memoryText"),
 
         "Some people become important without even trying... and somehow, you became one of those people for me. ❤️"
     );
@@ -1081,20 +1026,13 @@ function secretPage(){
 function unlock(){
 
     const input =
-        document.getElementById(
-            "password"
-        );
+        document.getElementById("password");
 
     const error =
-        document.getElementById(
-            "error"
-        );
+        document.getElementById("error");
 
     const secret =
-        document.getElementById(
-            "secretMessage"
-        );
-
+        document.getElementById("secretMessage");
 
     if(
         input.value
@@ -1106,8 +1044,7 @@ function unlock(){
 
         error.innerText="";
 
-        secret.style.display =
-            "block";
+        secret.style.display="block";
 
         heartBurst();
 
@@ -1212,24 +1149,15 @@ function finalPage(){
 function openSurprise(){
 
     const msg =
-        document.getElementById(
-            "finalMessage"
-        );
+        document.getElementById("finalMessage");
 
-    msg.style.display =
-        "block";
+    msg.style.display="block";
 
     heartBurst();
 
-    setTimeout(
-        heartBurst,
-        500
-    );
+    setTimeout(heartBurst,500);
 
-    setTimeout(
-        heartBurst,
-        1000
-    );
+    setTimeout(heartBurst,1000);
 }
 
 
@@ -1244,12 +1172,9 @@ function heartBurst(){
         setTimeout(()=>{
 
             const heart =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
-            heart.className =
-                "burst-heart";
+            heart.className="burst-heart";
 
             heart.innerText =
                 [
@@ -1263,10 +1188,7 @@ function heartBurst(){
                     )
                 ];
 
-            document.body.appendChild(
-                heart
-            );
-
+            document.body.appendChild(heart);
 
             const x =
                 (Math.random()-.5)*700;
@@ -1274,17 +1196,14 @@ function heartBurst(){
             const y =
                 (Math.random()-.5)*700;
 
-
             setTimeout(()=>{
 
                 heart.style.transform =
                     `translate(${x}px,${y}px) scale(1.5)`;
 
-                heart.style.opacity =
-                    "0";
+                heart.style.opacity="0";
 
             },50);
-
 
             setTimeout(()=>{
 
@@ -1301,27 +1220,36 @@ function heartBurst(){
    REAL MUSIC 🎵
 ========================= */
 
-let playing=false;
-
-
 /*
    IMPORTANT:
 
-   Your file must be:
+   Current GitHub structure:
 
-   music/love-song.mpeg
+   anjali-love/
+       index.html
+       anjali1.jpeg
+       anjali-special/
+           music/
+               love-song.mpeg
+
+   Therefore the correct music path is:
 */
+
+let playing=false;
 
 const loveSong =
     new Audio(
-        "music/love-song.mpeg"
+        "anjali-special/music/love-song.mpeg"
     );
 
 loveSong.loop=true;
+
 loveSong.volume=.6;
 
 
-/* Start music after YES */
+/* =========================
+   START MUSIC
+========================= */
 
 function startMusic(){
 
@@ -1336,22 +1264,15 @@ function startMusic(){
     })
     .catch(()=>{
 
-        /*
-          Browser may block audio
-          until user interaction.
-
-          YES click itself is a user
-          interaction, so normally
-          this should work.
-        */
-
         musicBtn.innerText =
             "🎵 Play Music";
     });
 }
 
 
-/* Music button */
+/* =========================
+   MUSIC BUTTON
+========================= */
 
 function toggleMusic(){
 
@@ -1386,7 +1307,7 @@ function toggleMusic(){
 
 
 /* =========================
-   START
+   START WEBSITE
 ========================= */
 
 homePage();
